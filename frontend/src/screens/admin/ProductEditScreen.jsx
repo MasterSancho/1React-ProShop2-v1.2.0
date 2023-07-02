@@ -50,11 +50,11 @@ const ProductEditScreen = () => {
     description,
     countInStock,
    });
-   toast.success('product updated successfully');
+   toast.success('Product updated successfully');
    refetch();
    navigate('/admin/productlist');
-  } catch (err) {
-   toast.error(err?.data?.message || err.error);
+  } catch (error) {
+   toast.error(error?.data?.message || error.error);
   }
  };
 

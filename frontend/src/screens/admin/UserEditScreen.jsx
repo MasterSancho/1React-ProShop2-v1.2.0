@@ -35,8 +35,8 @@ const UserEditScreen = () => {
    toast.success('User updated successfully');
    refetch();
    navigate('/admin/userlist');
-  } catch (err) {
-   toast.error(err?.data?.message || err.error);
+  } catch (error) {
+   toast.error(error?.data?.message || error.error);
   }
  };
 
@@ -55,6 +55,7 @@ const UserEditScreen = () => {
    </Link>
    <FormContainer>
     <h1>Edit User</h1>
+    {loadingUpdate && <Loader />}
     {isLoading ? (
      <Loader />
     ) : error ? (

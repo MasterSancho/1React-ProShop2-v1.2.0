@@ -46,8 +46,8 @@ const ProfileScreen = () => {
     }).unwrap();
     dispatch(setCredentials({ ...res }));
     toast.success('Profile updated successfully');
-   } catch (err) {
-    toast.error(err?.data?.message || err.error);
+   } catch (error) {
+    toast.error(error?.data?.message || error.error);
    }
   }
  };
